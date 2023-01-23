@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "target": "ES6",
+    "outDir": "dist",
+    "rootDir": "src",
+    "noImplicitAny": false
+  },
+  "exclude": [
+		"node_modules",
+		"test",
+		"dist",
+		"**/*spec.ts",
+    "webpack.config.mjs"
+	],
+	"include": [
+		"src",
+	],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+}
