@@ -2,6 +2,7 @@ import { httpServer } from './http_server/index';
 import { createWebSocketStream, WebSocket, WebSocketServer } from "ws";
 import {  getMousePosition, mouseDown, mouseLeft, mouseRight, mouseUp } from './control/mouse';
 import { drawCircle, drawRectangle } from './control/draw';
+import { makeScreenShot } from './control/print_screen';
 
 const HTTP_PORT = 8181;
 const WEBSOCKET_PORT = 8080;
@@ -61,11 +62,11 @@ ws.on('connection', (ws: WebSocket) => {
         duplex.write(data);
         break;
       }
-      // case 'prnt_scrn':
-      //   const base64 = await getPngBuffer();
-      //   duplex.write(`${data} ${base64}`);
-      //   break;
-
+      case 'prnt_scrn': {
+        const base64 = await makeScreenShot();
+        duplex.write(`${data} ${base64}`);
+        break;
+      }
       default:
         console.log("Wrong command!!!")
         break;
