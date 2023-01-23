@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Websocket Remote Control",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "npm run build && node dist/bundle.js",
-    "start:dev": "npx eslint ./src && ts-node src/index.ts",
-    "build": "npx webpack"
+    "start": "tsc && node dist/index.js",
+    "start:dev": "nodemon --exec node --loader ts-node/esm --inspect src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

@@ -1,27 +1,18 @@
 {
-  "compilerOptions": {  
-    "target": "es2018",
-    "module": "NodeNext", 
-    "rootDir": "./src", 
+  "compilerOptions": {
+    "module": "ES2015",
     "moduleResolution": "node",
-    "allowJs": true,
-    "outDir": "./dist",
+    "removeComments": true,
+    "preserveConstEnums": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "skipLibCheck": true 
+    "sourceMap": true,
+    "target": "ES6",
+    "outDir": "dist",
+    "rootDir": "src",
+    "noImplicitAny": false
   },
-  "exclude": [
-		"node_modules",
-		"dist",
-		"**/*spec.ts",
-    "webpack.config.ts"
-	],
-	"include": [
-		"src",
-	],
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/", "webpack.config.ts"],
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
